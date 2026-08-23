@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Production build outputs
+dist
+dist-ssr
+*.local
+
+# Environment variables (Do not commit live secrets)
+.env
+.env.production
+
+# System and IDE files
+.DS_Store
+Thumbs.db
+*.log
+.vscode
+.idea
