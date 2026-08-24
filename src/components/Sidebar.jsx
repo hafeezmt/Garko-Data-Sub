@@ -8,7 +8,6 @@ import {
   History, 
   User, 
   Users, 
-  DollarSign, 
   Tag, 
   Shield,
   X
@@ -36,26 +35,29 @@ export default function Sidebar({ role = 'user', mobileOpen, setMobileOpen }) {
   const links = isCustomer ? customerLinks : adminLinks;
 
   const content = (
-    <aside className="w-64 bg-slate-900 text-slate-300 min-h-[calc(100vh-4rem)] border-r border-slate-800 p-4 flex flex-col justify-between">
+    <aside className="w-64 bg-brand-dark text-slate-300 min-h-[calc(100vh-5rem)] border-r border-cyan-500/20 p-4 flex flex-col justify-between">
       <div>
-        {/* Sidebar Header */}
-        <div className="flex items-center justify-between px-3 py-2 mb-4 border-b border-slate-800 pb-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-            {isCustomer ? <User className="w-3.5 h-3.5 text-brand-accent" /> : <Shield className="w-3.5 h-3.5 text-emerald-400" />}
-            {isCustomer ? 'Customer Portal' : 'Admin Control Panel'}
-          </span>
-          {setMobileOpen && (
-            <button 
-              onClick={() => setMobileOpen(false)}
-              className="lg:hidden p-1 text-slate-400 hover:text-white"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          )}
+        {/* Sidebar Header & Brand Logo */}
+        <div className="px-2 py-2 mb-4 border-b border-cyan-500/20 pb-4">
+          <div className="flex items-center justify-between">
+            <img src="/logo.png" alt="GARKO DATA SUB" className="h-9 w-auto object-contain filter drop-shadow-[0_0_6px_rgba(0,210,255,0.3)]" />
+            {setMobileOpen && (
+              <button 
+                onClick={() => setMobileOpen(false)}
+                className="lg:hidden p-1 text-slate-400 hover:text-white"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+          <div className="mt-2 text-[10px] uppercase font-bold tracking-widest text-brand-cyan flex items-center gap-1.5">
+            {isCustomer ? <User className="w-3 h-3 text-brand-cyan" /> : <Shield className="w-3 h-3 text-brand-yellow" />}
+            {isCustomer ? 'Customer Portal' : 'Admin Command Center'}
+          </div>
         </div>
 
         {/* Navigation Items */}
-        <nav className="space-y-1">
+        <nav className="space-y-1.5">
           {links.map((link) => {
             const Icon = link.icon;
             return (
@@ -65,10 +67,10 @@ export default function Sidebar({ role = 'user', mobileOpen, setMobileOpen }) {
                 end={link.end}
                 onClick={() => setMobileOpen && setMobileOpen(false)}
                 className={({ isActive }) =>
-                  `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl font-medium text-sm transition-all ${
+                  `flex items-center space-x-3 px-4 py-3 rounded-xl font-bold text-sm transition-all ${
                     isActive
-                      ? 'bg-brand-accent text-brand-dark font-bold shadow-md'
-                      : 'hover:bg-slate-800 text-slate-300 hover:text-white'
+                      ? 'bg-gradient-to-r from-brand-cyan to-brand-blue text-slate-950 shadow-glow-cyan font-extrabold'
+                      : 'hover:bg-brand-navy text-slate-300 hover:text-brand-cyan'
                   }`
                 }
               >
@@ -81,9 +83,9 @@ export default function Sidebar({ role = 'user', mobileOpen, setMobileOpen }) {
       </div>
 
       {/* Footer Banner in Sidebar */}
-      <div className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-800 text-center">
-        <p className="text-xs text-slate-400 font-medium">Need Help?</p>
-        <p className="text-xs font-semibold text-brand-accent mt-0.5">support@garkodatasub.com</p>
+      <div className="p-3.5 rounded-2xl bg-brand-navy/80 border border-cyan-500/20 text-center">
+        <p className="text-[11px] text-slate-400 font-medium">Fast • Reliable • Affordable</p>
+        <p className="text-xs font-bold text-brand-cyan mt-0.5">support@garkodatasub.com</p>
       </div>
     </aside>
   );

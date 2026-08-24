@@ -6,28 +6,28 @@ export default function DataPlanCard({ plan, selected, onSelect, network }) {
     switch ((net || '').toLowerCase()) {
       case 'mtn':
         return {
-          badge: 'bg-amber-400 text-amber-950 font-bold',
-          border: selected ? 'border-amber-400 ring-2 ring-amber-400/30' : 'border-slate-200 hover:border-amber-400',
+          badge: 'bg-amber-400 text-amber-950 font-black',
+          border: selected ? 'border-brand-cyan ring-2 ring-brand-cyan/40 shadow-glow-cyan' : 'border-slate-200 hover:border-brand-cyan',
           accent: 'text-amber-600'
         };
       case 'airtel':
         return {
-          badge: 'bg-rose-600 text-white font-bold',
-          border: selected ? 'border-rose-500 ring-2 ring-rose-500/30' : 'border-slate-200 hover:border-rose-400',
+          badge: 'bg-rose-600 text-white font-black',
+          border: selected ? 'border-brand-cyan ring-2 ring-brand-cyan/40 shadow-glow-cyan' : 'border-slate-200 hover:border-brand-cyan',
           accent: 'text-rose-600'
         };
       case 'glo':
         return {
-          badge: 'bg-emerald-600 text-white font-bold',
-          border: selected ? 'border-emerald-500 ring-2 ring-emerald-500/30' : 'border-slate-200 hover:border-emerald-400',
+          badge: 'bg-emerald-600 text-white font-black',
+          border: selected ? 'border-brand-cyan ring-2 ring-brand-cyan/40 shadow-glow-cyan' : 'border-slate-200 hover:border-brand-cyan',
           accent: 'text-emerald-600'
         };
       case '9mobile':
       case 'etisalat':
       default:
         return {
-          badge: 'bg-green-700 text-white font-bold',
-          border: selected ? 'border-green-600 ring-2 ring-green-600/30' : 'border-slate-200 hover:border-green-400',
+          badge: 'bg-green-700 text-white font-black',
+          border: selected ? 'border-brand-cyan ring-2 ring-brand-cyan/40 shadow-glow-cyan' : 'border-slate-200 hover:border-brand-cyan',
           accent: 'text-green-700'
         };
     }
@@ -48,25 +48,25 @@ export default function DataPlanCard({ plan, selected, onSelect, network }) {
             {(network || plan.network || 'DATA').toUpperCase()}
           </span>
           {selected && (
-            <div className="w-5 h-5 rounded-full bg-brand-accent text-brand-dark flex items-center justify-center">
-              <CheckCircle className="w-4 h-4 fill-current stroke-white" />
+            <div className="w-5 h-5 rounded-full bg-brand-cyan text-slate-950 flex items-center justify-center font-bold">
+              <CheckCircle className="w-4 h-4 fill-current stroke-white text-brand-dark" />
             </div>
           )}
         </div>
 
         {/* Plan Name */}
-        <h4 className="text-base font-bold text-slate-900 group-hover:text-brand-accent line-clamp-2">
+        <h4 className="text-base font-extrabold text-slate-900 line-clamp-2">
           {plan.plan_name || plan.name || 'Data Plan'}
         </h4>
         <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
-          <Wifi className="w-3.5 h-3.5 text-slate-400" /> Instant Delivery
+          <Wifi className="w-3.5 h-3.5 text-brand-cyan" /> Instant Automated Delivery
         </p>
       </div>
 
       {/* Pricing & Selection */}
       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
         <div>
-          <span className="text-xs text-slate-400 font-medium block">Price</span>
+          <span className="text-[11px] text-slate-400 font-semibold block uppercase">Price</span>
           <span className="text-lg font-black text-slate-900">
             ₦{price.toLocaleString('en-NG')}
           </span>
@@ -74,10 +74,10 @@ export default function DataPlanCard({ plan, selected, onSelect, network }) {
 
         <button
           type="button"
-          className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors flex items-center gap-1 ${
+          className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition-all flex items-center gap-1 ${
             selected 
-              ? 'bg-brand-accent text-brand-dark' 
-              : 'bg-slate-100 text-slate-700 hover:bg-brand-accent hover:text-brand-dark'
+              ? 'bg-gradient-to-r from-brand-cyan to-brand-blue text-slate-950 shadow-sm' 
+              : 'bg-slate-100 text-slate-700 hover:bg-brand-cyan hover:text-slate-950'
           }`}
         >
           {selected ? 'Selected' : 'Select'}

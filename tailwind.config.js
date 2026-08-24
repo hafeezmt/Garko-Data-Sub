@@ -8,14 +8,20 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0B1D3A',
-          blue: '#142C52',
-          accent: '#F5A623',
-          'accent-hover': '#E09212',
-          light: '#F4F7FC',
-          card: '#FFFFFF',
-          border: '#E2E8F0',
+          cyan: '#00D2FF',
+          'cyan-hover': '#00B4D8',
+          blue: '#0077B6',
+          navy: '#0A192F',
+          dark: '#060D1B',
+          card: '#0F172A',
+          yellow: '#FACC15',
+          'yellow-hover': '#EAB308',
+          border: '#1E293B'
         }
+      },
+      boxShadow: {
+        'glow-cyan': '0 0 25px -5px rgba(0, 210, 255, 0.4)',
+        'glow-blue': '0 0 25px -5px rgba(0, 119, 182, 0.4)',
       }
     },
   },
