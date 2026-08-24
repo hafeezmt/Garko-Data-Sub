@@ -4,52 +4,53 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 antialiased min-h-screen;
+    @apply bg-slate-50 text-slate-900 antialiased min-h-screen;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   ::selection {
     background-color: #00D2FF;
-    color: #020617;
+    color: #0F172A;
   }
 }
 
 @layer utilities {
-  .glass-card {
-    background: rgba(15, 23, 42, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 210, 255, 0.25);
+    box-shadow: 0 10px 40px -10px rgba(0, 119, 182, 0.08);
   }
 
-  .glass-card-hover {
+  .glass-card-light-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .glass-card-hover:hover {
-    background: rgba(15, 23, 42, 0.8);
-    border-color: rgba(0, 210, 255, 0.5);
-    box-shadow: 0 0 25px -5px rgba(0, 210, 255, 0.3);
+  .glass-card-light-hover:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 210, 255, 0.6);
+    box-shadow: 0 0 30px -5px rgba(0, 210, 255, 0.3);
     transform: translateY(-2px);
   }
 
-  .glass-input {
-    background: rgba(6, 13, 27, 0.8);
+  .glass-input-light {
+    background: rgba(248, 250, 252, 0.9);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(30, 41, 59, 0.8);
-    color: #ffffff;
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    color: #0F172A;
   }
 
-  .glass-input:focus {
+  .glass-input-light:focus {
     border-color: #00D2FF;
+    background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
   }
 
-  .glass-nav {
-    background: rgba(6, 13, 27, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+  .glass-nav-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.25);
   }
 }
