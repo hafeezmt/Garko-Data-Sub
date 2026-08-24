@@ -4,8 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 antialiased min-h-screen selection:bg-brand-cyan selection:text-slate-950;
+    @apply bg-slate-950 text-slate-100 antialiased min-h-screen;
     font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  ::selection {
+    background-color: #00D2FF;
+    color: #020617;
   }
 }
 

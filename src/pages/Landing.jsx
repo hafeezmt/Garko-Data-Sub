@@ -44,7 +44,7 @@ export default function Landing({ user, profile }) {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-white selection:bg-brand-cyan selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-slate-950 text-white">
       <Navbar user={user} profile={profile} />
 
       {/* Hero Section */}
