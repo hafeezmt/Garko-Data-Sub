@@ -1,6 +1,8 @@
 # GARKO DATA SUB - Full VTU & Data Reselling Web Application
 
-GARKO DATA SUB is a production-ready, full-stack Data Reselling and VTU (Virtual Top Up) web application built using **React**, **Tailwind CSS**, **Supabase**, **Paystack**, and **VTPass API**.
+![Version](https://img.shields.io/badge/version-1.1.0--glassmorphism-00D2FF) ![License](https://img.shields.io/badge/license-MIT-blue)
+
+GARKO DATA SUB is a production-ready, full-stack Data Reselling and VTU (Virtual Top Up) web application featuring a **Light Glassmorphism UI**, built using **React**, **Tailwind CSS**, **Supabase**, **Paystack**, and **VTPass API**.
 
 ---
 
