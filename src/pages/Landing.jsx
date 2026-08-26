@@ -14,20 +14,41 @@ import {
   Award,
   Clock,
   ChevronRight,
-  Headphones
+  Headphones,
+  Smartphone,
+  Tv,
+  ZapOff
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { getDataPrices } from '../lib/supabase';
 
+// High-quality default plans to render instantly if DB is loading
+const DEFAULT_PLANS = [
+  { id: 'mtn-500mb', network: 'mtn', plan_name: 'MTN 500MB SME', selling_price: 160 },
+  { id: 'mtn-1gb', network: 'mtn', plan_name: 'MTN 1GB SME', selling_price: 290 },
+  { id: 'mtn-2gb', network: 'mtn', plan_name: 'MTN 2GB SME', selling_price: 580 },
+  { id: 'mtn-3gb', network: 'mtn', plan_name: 'MTN 3GB SME', selling_price: 870 },
+  { id: 'mtn-5gb', network: 'mtn', plan_name: 'MTN 5GB SME', selling_price: 1450 },
+  { id: 'airtel-500mb', network: 'airtel', plan_name: 'Airtel 500MB Direct', selling_price: 170 },
+  { id: 'airtel-1gb', network: 'airtel', plan_name: 'Airtel 1GB Direct', selling_price: 320 },
+  { id: 'airtel-2gb', network: 'airtel', plan_name: 'Airtel 2GB Direct', selling_price: 640 },
+  { id: 'airtel-5gb', network: 'airtel', plan_name: 'Airtel 5GB Direct', selling_price: 1500 },
+  { id: 'glo-1gb', network: 'glo', plan_name: 'Glo 1GB Special', selling_price: 300 },
+  { id: 'glo-2gb', network: 'glo', plan_name: 'Glo 2.5GB Special', selling_price: 1000 },
+  { id: '9mobile-1gb', network: '9mobile', plan_name: '9mobile 1.5GB', selling_price: 500 },
+];
+
 export default function Landing({ user, profile }) {
-  const [dataPlans, setDataPlans] = useState([]);
+  const [dataPlans, setDataPlans] = useState(DEFAULT_PLANS);
   const [selectedNetwork, setSelectedNetwork] = useState('all');
 
   useEffect(() => {
     async function loadPrices() {
       try {
         const prices = await getDataPrices();
-        setDataPlans(prices);
+        if (prices && prices.length > 0) {
+          setDataPlans(prices);
+        }
       } catch (err) {
         console.error('Error loading pricing table:', err);
       }
@@ -199,48 +220,46 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="why-us" className="py-20 bg-white border-t border-slate-200/80">
+      {/* Services Grid Section */}
+      <section className="py-16 bg-white border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">Why GARKO DATA SUB</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
-              Built for Speed, Reliability & Profit
-            </h2>
-            <p className="text-slate-600 text-sm font-semibold">
-              Enjoy automated VTU API infrastructure built for seamless transactions.
-            </p>
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">All Services</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">VTU Services & Top-ups</h2>
+            <p className="text-slate-600 text-sm font-semibold">Instant automated fulfillment for all major Nigerian utilities.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6">
-                <Clock className="w-7 h-7 stroke-[2.5]" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 mx-auto flex items-center justify-center">
+                <Wifi className="w-7 h-7 stroke-[2.5]" />
               </div>
-              <h3 className="text-xl font-black text-slate-950 mb-2">5-Second Delivery</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
-                Direct automated connection to Nigerian telecom gateways ensures your data bundle is delivered within seconds.
-              </p>
+              <h4 className="font-extrabold text-slate-950 text-base">Cheap Data Bundles</h4>
+              <p className="text-xs text-slate-500 font-medium">SME, CG, Gifting & Direct data plans.</p>
             </div>
 
-            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6">
-                <TrendingUp className="w-7 h-7 stroke-[2.5]" />
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 mx-auto flex items-center justify-center">
+                <Smartphone className="w-7 h-7 stroke-[2.5]" />
               </div>
-              <h3 className="text-xl font-black text-slate-950 mb-2">Wholesale Reseller Prices</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
-                Unlock cheap rates on SME & Direct data bundles to maximize your profit margin on every gigabyte sold.
-              </p>
+              <h4 className="font-extrabold text-slate-950 text-base">Airtime Top-Up</h4>
+              <p className="text-xs text-slate-500 font-medium">Instant airtime recharge at 2% discount.</p>
             </div>
 
-            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
-                <ShieldCheck className="w-7 h-7 stroke-[2.5]" />
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 mx-auto flex items-center justify-center">
+                <Tv className="w-7 h-7 stroke-[2.5]" />
               </div>
-              <h3 className="text-xl font-black text-slate-950 mb-2">Auto-Refund System</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
-                If a network transaction fails due to carrier maintenance, your wallet balance is refunded instantly.
-              </p>
+              <h4 className="font-extrabold text-slate-950 text-base">Cable TV Subscriptions</h4>
+              <p className="text-xs text-slate-500 font-medium">DSTV, GOTV & Startimes subscriptions.</p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 mx-auto flex items-center justify-center">
+                <Zap className="w-7 h-7 stroke-[2.5]" />
+              </div>
+              <h4 className="font-extrabold text-slate-950 text-base">Electricity Tokens</h4>
+              <p className="text-xs text-slate-500 font-medium">Prepaid & Postpaid meter token generation.</p>
             </div>
           </div>
         </div>
@@ -309,37 +328,31 @@ export default function Landing({ user, profile }) {
 
           {/* Data Bundle Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPlans.length > 0 ? (
-              filteredPlans.map((plan) => (
-                <div
-                  key={plan.id}
-                  className="bg-white/90 rounded-3xl p-6 border border-cyan-200/80 shadow-md hover:shadow-lg transition-all flex items-center justify-between"
-                >
-                  <div className="space-y-1">
-                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] uppercase font-black bg-slate-100 text-slate-800 border border-slate-200">
-                      {plan.network}
-                    </span>
-                    <h4 className="font-extrabold text-slate-950 text-base">{plan.plan_name}</h4>
-                    <p className="text-xs text-slate-500 font-semibold">Validity: 30 Days</p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xl font-black text-cyan-700">
-                      ₦{parseFloat(plan.selling_price || 0).toLocaleString('en-NG')}
-                    </div>
-                    <Link
-                      to={user ? "/dashboard/buy-data" : "/register"}
-                      className="inline-block mt-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 text-xs font-black hover:scale-105 transition-transform shadow-sm"
-                    >
-                      Buy Now
-                    </Link>
-                  </div>
+            {filteredPlans.map((plan) => (
+              <div
+                key={plan.id}
+                className="bg-white/90 rounded-3xl p-6 border border-cyan-200/80 shadow-md hover:shadow-lg transition-all flex items-center justify-between"
+              >
+                <div className="space-y-1">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] uppercase font-black bg-slate-100 text-slate-800 border border-slate-200">
+                    {plan.network}
+                  </span>
+                  <h4 className="font-extrabold text-slate-950 text-base">{plan.plan_name}</h4>
+                  <p className="text-xs text-slate-500 font-semibold">Validity: 30 Days</p>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full py-12 text-center text-slate-500 font-bold">
-                Loading live pricing table...
+                <div className="text-right">
+                  <div className="text-xl font-black text-cyan-700">
+                    ₦{parseFloat(plan.selling_price || 0).toLocaleString('en-NG')}
+                  </div>
+                  <Link
+                    to={user ? "/dashboard/buy-data" : "/register"}
+                    className="inline-block mt-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 text-xs font-black hover:scale-105 transition-transform shadow-sm"
+                  >
+                    Buy Now
+                  </Link>
+                </div>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
