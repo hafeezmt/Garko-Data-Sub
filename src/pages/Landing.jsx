@@ -450,12 +450,12 @@ export default function Landing({ user, profile }) {
           </div>
 
           {/* Network Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             <button
               onClick={() => setSelectedNetwork('all')}
-              className={`px-6 py-2.5 rounded-full text-xs font-black transition-all ${
+              className={`px-4 py-1.5 rounded-full text-[11px] font-black transition-all ${
                 selectedNetwork === 'all'
-                  ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-md'
+                  ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-sm'
                   : 'bg-white text-slate-800 border border-slate-200 hover:border-emerald-300'
               }`}
             >
@@ -465,9 +465,9 @@ export default function Landing({ user, profile }) {
               <button
                 key={net.id}
                 onClick={() => setSelectedNetwork(net.id)}
-                className={`px-6 py-2.5 rounded-full text-xs font-black uppercase transition-all ${
+                className={`px-4 py-1.5 rounded-full text-[11px] font-black uppercase transition-all ${
                   selectedNetwork === net.id
-                    ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-md'
+                    ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-sm'
                     : 'bg-white text-slate-800 border border-slate-200 hover:border-emerald-300'
                 }`}
               >

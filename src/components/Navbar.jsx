@@ -54,41 +54,41 @@ export default function Navbar({ user, profile }) {
 
         {/* Center Navigation Links - Sharp Handcrafted Typographic Polish */}
         {isHome && (
-          <div className="hidden lg:flex items-center space-x-2 font-black text-xs uppercase tracking-wider text-slate-800">
+          <div className="hidden lg:flex items-center space-x-1 font-bold text-[11px] uppercase tracking-wider text-slate-700">
             <a 
               href="#" 
-              className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-800 transition-all shadow-sm flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-800 font-black transition-all shadow-sm flex items-center gap-1"
             >
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600 fill-current" />
+              <Sparkles className="w-3 h-3 text-emerald-600 fill-current" />
               Home
             </a>
             <a 
               href="#services" 
-              className="px-4 py-2 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
+              className="px-3 py-1.5 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
             >
               Services
             </a>
             <a 
               href="#how-it-works" 
-              className="px-4 py-2 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
+              className="px-3 py-1.5 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
             >
               How It Works
             </a>
             <a 
               href="#why-us" 
-              className="px-4 py-2 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
+              className="px-3 py-1.5 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
             >
               Why Us
             </a>
             <a 
               href="#pricing" 
-              className="px-4 py-2 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
+              className="px-3 py-1.5 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
             >
               Pricing
             </a>
             <a 
               href="#reviews" 
-              className="px-4 py-2 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
+              className="px-3 py-1.5 rounded-full hover:text-emerald-700 hover:bg-emerald-50/80 transition-all"
             >
               Reviews
             </a>
