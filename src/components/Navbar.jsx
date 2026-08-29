@@ -40,25 +40,26 @@ export default function Navbar({ user, profile }) {
 
   return (
     <header className="sticky top-4 sm:top-6 z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Expanded Floating Pill Glass Navbar */}
-      <nav className="glass-nav-pill rounded-full px-5 sm:px-8 py-3 sm:py-4 flex items-center justify-between transition-all duration-300">
+      {/* Expanded Sharp Floating Pill Glass Navbar */}
+      <nav className="glass-nav-pill rounded-full px-5 sm:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-all duration-300">
         
-        {/* Brand Logo - Enlarged for Prominence */}
+        {/* Brand Logo - Enlarged & Glowing */}
         <Link to="/" className="flex items-center space-x-3 group">
           <img 
             src="/logo.png" 
             alt="GARKO DATA SUB" 
-            className="h-11 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_4px_12px_rgba(16,185,129,0.2)]" 
+            className="h-11 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_4px_14px_rgba(16,185,129,0.3)]" 
           />
         </Link>
 
-        {/* Center Navigation Links - Expanded Spacing & Human Typographic Polish */}
+        {/* Center Navigation Links - Sharp Handcrafted Typographic Polish */}
         {isHome && (
           <div className="hidden lg:flex items-center space-x-2 font-black text-xs uppercase tracking-wider text-slate-800">
             <a 
               href="#" 
-              className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-800 transition-all shadow-sm"
+              className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-800 transition-all shadow-sm flex items-center gap-1.5"
             >
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600 fill-current" />
               Home
             </a>
             <a 
@@ -100,7 +101,7 @@ export default function Navbar({ user, profile }) {
             <div className="flex items-center space-x-3">
               <Link
                 to={profile?.role === 'admin' ? "/admin" : "/dashboard"}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-black text-xs uppercase tracking-wider transition-all border border-emerald-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-950 font-black text-xs uppercase tracking-wider transition-all border border-emerald-200 shadow-sm hover:scale-105"
               >
                 <LayoutDashboard className="w-4 h-4 text-emerald-600" />
                 <span>{profile?.role === 'admin' ? "Admin Portal" : "Dashboard"}</span>
