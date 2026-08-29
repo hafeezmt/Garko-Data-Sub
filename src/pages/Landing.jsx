@@ -23,7 +23,11 @@ import {
   Users,
   Shield,
   Layers,
-  HelpCircle
+  HelpCircle,
+  ChevronDown,
+  UserCheck,
+  CreditCard,
+  Send
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { getDataPrices } from '../lib/supabase';
@@ -48,6 +52,7 @@ export default function Landing({ user, profile }) {
   const [dataPlans, setDataPlans] = useState(DEFAULT_PLANS);
   const [selectedNetwork, setSelectedNetwork] = useState('all');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     async function loadPrices() {
@@ -74,11 +79,55 @@ export default function Landing({ user, profile }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   const networks = [
     { id: 'mtn', name: 'MTN Nigeria', color: 'from-amber-400 to-yellow-500', textColor: 'text-amber-950', border: 'border-amber-300', tagline: 'SME & Direct Bundles' },
     { id: 'airtel', name: 'Airtel Nigeria', color: 'from-rose-500 to-red-600', textColor: 'text-white', border: 'border-rose-300', tagline: 'CG & Direct Data' },
     { id: 'glo', name: 'Glo Nigeria', color: 'from-emerald-500 to-green-600', textColor: 'text-white', border: 'border-emerald-300', tagline: 'Super Fast GLO' },
     { id: '9mobile', name: '9mobile', color: 'from-green-600 to-teal-700', textColor: 'text-white', border: 'border-green-300', tagline: 'High-Speed 9mobile' },
+  ];
+
+  const faqs = [
+    {
+      q: 'How fast is data bundle delivery?',
+      a: 'All transactions are automated and delivered within 5 seconds of confirmation.'
+    },
+    {
+      q: 'How do I fund my wallet?',
+      a: 'You can instantly fund your wallet using Paystack with your debit card, bank transfer, or USSD code.'
+    },
+    {
+      q: 'What happens if a transaction fails?',
+      a: 'Our automated system instantly refunds your wallet balance if carrier maintenance causes a transaction delay.'
+    },
+    {
+      q: 'Can I resell data to make profits?',
+      a: 'Yes! GARKO DATA SUB provides wholesale reseller rates so you can sell to your own clients at custom retail prices.'
+    }
+  ];
+
+  const reviews = [
+    {
+      name: 'Ibrahim Musa',
+      role: 'VTU Reseller, Kano',
+      comment: 'GARKO DATA SUB delivers data in seconds! My customers never complain about delays.',
+      rating: 5
+    },
+    {
+      name: 'Chinedu Okeke',
+      role: 'Student, Lagos',
+      comment: 'Cheap MTN SME data bundles and instant Paystack funding. 100% reliable!',
+      rating: 5
+    },
+    {
+      name: 'Amina Bello',
+      role: 'Business Owner, Abuja',
+      comment: 'The wallet auto-refund feature gives me 100% peace of mind. Excellent VTU platform!',
+      rating: 5
+    }
   ];
 
   const filteredPlans = dataPlans.filter((plan) => 
@@ -91,7 +140,7 @@ export default function Landing({ user, profile }) {
       {/* Floating Pill Glass Navbar */}
       <Navbar user={user} profile={profile} />
 
-      {/* Hero Section (Replicating JMB Data Sub Animated Hero) */}
+      {/* Hero Section (JMB Data Sub Animated Hero) */}
       <section className="relative overflow-hidden bg-gradient-to-b from-emerald-950 via-teal-900 to-slate-900 text-white pt-10 pb-20 lg:pt-16 lg:pb-32">
         
         {/* Background Glow Orbs */}
@@ -247,7 +296,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Floating Dark Emerald Metrics Card (Replicating JMB Data Sub 4-Column Bar) */}
+      {/* Floating Dark Emerald Metrics Card */}
       <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14">
         <div className="rounded-3xl bg-emerald-950 text-white p-6 sm:p-10 border border-emerald-500/30 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-emerald-800/60">
@@ -276,7 +325,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Infinite Logo Marquee Ticker Section (Replicating JMB Data Sub Marquee) */}
+      {/* Infinite Logo Marquee Ticker Section */}
       <section className="py-12 bg-white overflow-hidden border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
           <p className="text-xs font-black text-slate-400 uppercase tracking-widest">
@@ -285,14 +334,14 @@ export default function Landing({ user, profile }) {
         </div>
 
         <div className="relative w-full overflow-hidden">
-          <div className="animate-marquee items-center justify-around space-x-12 opacity-70 filter grayscale hover:grayscale-0 transition-all">
+          <div className="animate-marquee items-center justify-around space-x-12 opacity-75">
             <span className="text-xl font-black text-slate-800">MTN NIGERIA</span>
             <span className="text-xl font-black text-rose-700">AIRTEL</span>
             <span className="text-xl font-black text-emerald-700">GLO NIGERIA</span>
             <span className="text-xl font-black text-green-700">9MOBILE</span>
             <span className="text-xl font-black text-blue-700">PAYSTACK</span>
             <span className="text-xl font-black text-indigo-700">AEDC ELECTRICITY</span>
-            <span className="text-xl font-black text-cyan-700">VTPASS GATEWAY</span>
+            <span className="text-xl font-black text-teal-700">VTPASS GATEWAY</span>
             {/* Repeated for continuous infinite loop */}
             <span className="text-xl font-black text-slate-800">MTN NIGERIA</span>
             <span className="text-xl font-black text-rose-700">AIRTEL</span>
@@ -303,8 +352,51 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
+      {/* How It Works 3-Step Section */}
+      <section id="how-it-works" className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+            <span className="text-xs font-black text-emerald-600 uppercase tracking-widest">Simple Process</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">How It Works in 3 Steps</h2>
+            <p className="text-slate-600 text-sm font-semibold">Getting cheap data and paying bills takes less than 2 minutes.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-600 mx-auto flex items-center justify-center text-2xl font-black">
+                1
+              </div>
+              <h3 className="text-xl font-black text-slate-950">Create Free Account</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                Sign up in 30 seconds with your email and phone number to access reseller rates instantly.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-teal-500/10 text-teal-600 mx-auto flex items-center justify-center text-2xl font-black">
+                2
+              </div>
+              <h3 className="text-xl font-black text-slate-950">Fund Your Wallet</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                Add money to your secure wallet using Paystack card payments, bank transfer, or USSD code.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-green-500/10 text-green-600 mx-auto flex items-center justify-center text-2xl font-black">
+                3
+              </div>
+              <h3 className="text-xl font-black text-slate-950">Buy Data & Bills</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                Select your preferred data bundle or utility bill and receive automated delivery in 5 seconds!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid Section */}
-      <section id="services" className="py-20 bg-slate-50 border-t border-slate-200">
+      <section id="services" className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
             <span className="text-xs font-black text-emerald-600 uppercase tracking-widest">All-in-One Services</span>
@@ -349,7 +441,7 @@ export default function Landing({ user, profile }) {
       </section>
 
       {/* Pricing Table Section */}
-      <section id="pricing" className="py-20 bg-white border-t border-slate-200">
+      <section id="pricing" className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-black text-emerald-600 uppercase tracking-widest">Reseller Rates</span>
@@ -364,7 +456,7 @@ export default function Landing({ user, profile }) {
               className={`px-6 py-2.5 rounded-full text-xs font-black transition-all ${
                 selectedNetwork === 'all'
                   ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-md'
-                  : 'bg-slate-100 text-slate-800 border border-slate-200 hover:border-emerald-300'
+                  : 'bg-white text-slate-800 border border-slate-200 hover:border-emerald-300'
               }`}
             >
               All Networks
@@ -376,7 +468,7 @@ export default function Landing({ user, profile }) {
                 className={`px-6 py-2.5 rounded-full text-xs font-black uppercase transition-all ${
                   selectedNetwork === net.id
                     ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 text-slate-950 shadow-md'
-                    : 'bg-slate-100 text-slate-800 border border-slate-200 hover:border-emerald-300'
+                    : 'bg-white text-slate-800 border border-slate-200 hover:border-emerald-300'
                 }`}
               >
                 {net.id}
@@ -409,6 +501,68 @@ export default function Landing({ user, profile }) {
                     Buy Now
                   </Link>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Reviews Section */}
+      <section id="reviews" className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+            <span className="text-xs font-black text-emerald-600 uppercase tracking-widest">Testimonials</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">Trusted by 50,000+ Users</h2>
+            <p className="text-slate-600 text-sm font-semibold">See what reseller partners and individual users say about us.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reviews.map((rev, i) => (
+              <div key={i} className="p-8 rounded-3xl glass-card-light glass-card-light-hover space-y-4">
+                <div className="flex text-amber-400">
+                  {[...Array(rev.rating)].map((_, idx) => (
+                    <Star key={idx} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+                <p className="text-slate-700 text-sm italic font-medium leading-relaxed">
+                  "{rev.comment}"
+                </p>
+                <div className="pt-2 border-t border-slate-100">
+                  <h4 className="font-extrabold text-slate-950 text-sm">{rev.name}</h4>
+                  <p className="text-xs text-emerald-600 font-semibold">{rev.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Accordion Section */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 space-y-2">
+            <span className="text-xs font-black text-emerald-600 uppercase tracking-widest">Questions & Answers</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-2xl glass-card-light border border-slate-200/80 overflow-hidden transition-all"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full p-6 text-left font-black text-slate-900 text-sm sm:text-base flex items-center justify-between gap-4"
+                >
+                  <span>{faq.q}</span>
+                  <ChevronDown className={`w-5 h-5 text-emerald-600 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-6 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed border-t border-slate-100 pt-3">
+                    {faq.a}
+                  </div>
+                )}
               </div>
             ))}
           </div>
