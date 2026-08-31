@@ -167,17 +167,17 @@ export default function Landing({ user, profile }) {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-emerald-400 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-cyan-400 selection:text-slate-950">
       
       {/* Floating Pill Glass Navbar */}
       <Navbar user={user} profile={profile} />
 
-      {/* Hero Section (Futuristic Glass Cyber-Emerald) */}
-      <section className="relative overflow-hidden pt-10 pb-20 lg:pt-16 lg:pb-32">
+      {/* Hero Section (Electric Cyan Brand Theme) */}
+      <section className="relative overflow-hidden bg-slate-50 pt-10 pb-20 lg:pt-16 lg:pb-32">
         
         {/* Background Glow Orbs */}
-        <div className="absolute top-0 right-1/4 w-[650px] h-[650px] bg-emerald-500/20 rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[650px] h-[650px] bg-cyan-500/15 rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[650px] h-[650px] bg-cyan-400/20 rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[650px] h-[650px] bg-blue-500/15 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -186,50 +186,49 @@ export default function Landing({ user, profile }) {
             <div className="lg:col-span-7 text-center lg:text-left space-y-6">
               
               {/* Live Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-badge-dark text-emerald-300 text-xs font-black uppercase tracking-wider shadow-md">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Next-Gen VTU Automation Engine</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-light text-cyan-900 text-xs font-black uppercase tracking-wider shadow-sm border border-cyan-200/80">
+                <Sparkles className="w-4 h-4 text-amber-500 fill-current animate-pulse" />
+                <span>Instant top-ups on all networks, 24/7</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white">
-                Ultra-Fast Data <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">At Reseller Prices.</span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-slate-950">
+                Recharge, pay bills & earn — <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-sky-600 to-blue-700">the smart way with GARKO DATA SUB</span>
               </h1>
 
               {/* Description */}
-              <p className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                Instantly top up MTN, Airtel, Glo & 9mobile data bundles within 5 seconds. Managed with zero lag, instant auto-refunds, and high reseller margins.
+              <p className="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-semibold">
+                Buy airtime and data, pay electricity and TV bills, print recharge cards and grow a VTU business — all from one lightning-fast, bank-grade secure wallet.
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <Link
                   to={user ? "/dashboard" : "/register"}
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 text-slate-950 font-black text-base uppercase tracking-wider shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-1 flex items-center justify-center space-x-3"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 text-slate-950 font-black text-base uppercase tracking-wider shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-1 flex items-center justify-center space-x-3"
                 >
-                  <span>Create Free Account</span>
+                  <span>Get Started Now</span>
                   <ArrowRight className="w-5 h-5 stroke-[3]" />
                 </Link>
 
                 <a
                   href="#calculator"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-white font-bold text-base transition-all text-center shadow-sm"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-900 font-black text-base border border-slate-200 transition-all text-center shadow-sm hover:border-cyan-300"
                 >
                   Try Estimator
                 </a>
               </div>
 
               {/* Guarantees */}
-              <div className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-300 font-extrabold">
+              <div className="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-700 font-extrabold">
                 <span className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> 100% Instant Delivery
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> 100% Instant Delivery
                 </span>
                 <span className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-cyan-400" /> Paystack Secured
+                  <ShieldCheck className="w-4 h-4 text-cyan-600" /> Paystack Secured
                 </span>
                 <span className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-amber-400 fill-current" /> Auto-Refund System
+                  <Zap className="w-4 h-4 text-amber-500 fill-current" /> Instant Auto-Refund
                 </span>
               </div>
 
@@ -237,22 +236,22 @@ export default function Landing({ user, profile }) {
 
             {/* Right Side Interactive Instant Plan Estimator Widget */}
             <div id="calculator" className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-none">
-              <div className="glass-card-dark rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden border border-emerald-500/30">
+              <div className="glass-card-light rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden border border-cyan-200/80">
                 
                 {/* Header */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                  <div className="flex items-center space-x-2 text-emerald-400 font-black text-xs uppercase tracking-wider">
-                    <Calculator className="w-4 h-4" />
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <div className="flex items-center space-x-2 text-cyan-700 font-black text-xs uppercase tracking-wider">
+                    <Calculator className="w-4 h-4 text-cyan-600" />
                     <span>Instant Plan Estimator</span>
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 text-[10px] font-bold border border-emerald-500/20">
-                    Live Rates
+                  <span className="px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-800 text-[10px] font-black border border-cyan-200">
+                    Reseller Rates
                   </span>
                 </div>
 
                 {/* Network Selector Tabs */}
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-slate-400 uppercase tracking-wider">Select Network</label>
+                  <label className="text-[11px] font-black text-slate-700 uppercase tracking-wider">Select Network</label>
                   <div className="grid grid-cols-4 gap-2">
                     {['mtn', 'airtel', 'glo', '9mobile'].map((net) => (
                       <button
@@ -260,8 +259,8 @@ export default function Landing({ user, profile }) {
                         onClick={() => { setEstimatorNet(net); setSelectedPlanIndex(0); }}
                         className={`py-2.5 rounded-xl font-black text-xs uppercase transition-all ${
                           estimatorNet === net
-                            ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 border border-emerald-300 shadow-md scale-105'
-                            : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-emerald-500/50'
+                            ? 'bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 shadow-md scale-105'
+                            : 'bg-white text-slate-700 border border-slate-200 hover:border-cyan-300'
                         }`}
                       >
                         {net}
@@ -272,11 +271,11 @@ export default function Landing({ user, profile }) {
 
                 {/* Plan Dropdown */}
                 <div className="space-y-2">
-                  <label className="text-[11px] font-black text-slate-400 uppercase tracking-wider">Select Bundle Size</label>
+                  <label className="text-[11px] font-black text-slate-700 uppercase tracking-wider">Select Bundle Size</label>
                   <select
                     value={selectedPlanIndex}
                     onChange={(e) => setSelectedPlanIndex(Number(e.target.value))}
-                    className="w-full py-3 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white font-extrabold text-xs focus:outline-none focus:border-emerald-400 transition-colors"
+                    className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 font-extrabold text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-colors"
                   >
                     {currentEstimatorPlans.map((plan, idx) => (
                       <option key={plan.id} value={idx}>
@@ -287,16 +286,16 @@ export default function Landing({ user, profile }) {
                 </div>
 
                 {/* Total Price Display */}
-                <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-between">
+                <div className="p-4 rounded-2xl bg-cyan-500/10 border border-cyan-300/50 flex items-center justify-between">
                   <div>
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">Reseller Price</span>
-                    <div className="text-3xl font-black text-emerald-400 mt-0.5">
+                    <span className="text-[10px] font-black text-slate-600 uppercase tracking-wider">Reseller Price</span>
+                    <div className="text-3xl font-black text-cyan-700 mt-0.5">
                       ₦{currentEstimatorPlan.price.toLocaleString('en-NG')}
                     </div>
                   </div>
                   <button
                     onClick={handleBuyEstimatorPlan}
-                    className="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/20 hover:scale-105 transition-transform flex items-center gap-1.5"
+                    className="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-transform flex items-center gap-1.5"
                   >
                     <ShoppingCart className="w-4 h-4" />
                     <span>Buy Now</span>
@@ -310,28 +309,28 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Floating Dark Emerald Metrics Card */}
+      {/* Floating Dark Emerald/Cyan Metrics Card */}
       <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14">
-        <div className="rounded-3xl bg-slate-900 text-white p-6 sm:p-10 border border-emerald-500/30 shadow-2xl">
+        <div className="rounded-3xl bg-slate-900 text-white p-6 sm:p-10 border border-cyan-400/30 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
             
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-400">99.9%</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-cyan-400">99.9%</div>
               <p className="text-xs sm:text-sm text-slate-300 font-bold mt-1">Uptime & reliability</p>
             </div>
 
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-400">500K+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-cyan-400">500K+</div>
               <p className="text-xs sm:text-sm text-slate-300 font-bold mt-1">Transactions processed</p>
             </div>
 
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-400">20+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-cyan-400">20+</div>
               <p className="text-xs sm:text-sm text-slate-300 font-bold mt-1">Services in one place</p>
             </div>
 
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-400">24/7</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-cyan-400">24/7</div>
               <p className="text-xs sm:text-sm text-slate-300 font-bold mt-1">Customer support</p>
             </div>
 
@@ -340,68 +339,68 @@ export default function Landing({ user, profile }) {
       </section>
 
       {/* Infinite Logo Marquee Ticker Section */}
-      <section className="py-12 bg-slate-900 overflow-hidden border-b border-slate-800">
+      <section className="py-12 bg-white overflow-hidden border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
-          <p className="text-xs font-black text-slate-400 uppercase tracking-widest">
+          <p className="text-xs font-black text-cyan-800 uppercase tracking-widest">
             POWERING PAYMENTS ACROSS EVERY MAJOR NETWORK & BILLER
           </p>
         </div>
 
         <div className="relative w-full overflow-hidden">
           <div className="animate-marquee items-center justify-around space-x-12 opacity-80">
-            <span className="text-xl font-black text-slate-200">MTN NIGERIA</span>
-            <span className="text-xl font-black text-rose-400">AIRTEL</span>
-            <span className="text-xl font-black text-emerald-400">GLO NIGERIA</span>
-            <span className="text-xl font-black text-green-400">9MOBILE</span>
-            <span className="text-xl font-black text-cyan-400">PAYSTACK</span>
-            <span className="text-xl font-black text-indigo-400">AEDC ELECTRICITY</span>
-            <span className="text-xl font-black text-teal-400">VTPASS GATEWAY</span>
+            <span className="text-xl font-black text-amber-950">MTN NIGERIA</span>
+            <span className="text-xl font-black text-rose-700">AIRTEL</span>
+            <span className="text-xl font-black text-emerald-700">GLO NIGERIA</span>
+            <span className="text-xl font-black text-green-700">9MOBILE</span>
+            <span className="text-xl font-black text-cyan-700">PAYSTACK</span>
+            <span className="text-xl font-black text-indigo-700">AEDC ELECTRICITY</span>
+            <span className="text-xl font-black text-sky-700">VTPASS GATEWAY</span>
             {/* Repeated for continuous infinite loop */}
-            <span className="text-xl font-black text-slate-200">MTN NIGERIA</span>
-            <span className="text-xl font-black text-rose-400">AIRTEL</span>
-            <span className="text-xl font-black text-emerald-400">GLO NIGERIA</span>
-            <span className="text-xl font-black text-green-400">9MOBILE</span>
-            <span className="text-xl font-black text-cyan-400">PAYSTACK</span>
+            <span className="text-xl font-black text-amber-950">MTN NIGERIA</span>
+            <span className="text-xl font-black text-rose-700">AIRTEL</span>
+            <span className="text-xl font-black text-emerald-700">GLO NIGERIA</span>
+            <span className="text-xl font-black text-green-700">9MOBILE</span>
+            <span className="text-xl font-black text-cyan-700">PAYSTACK</span>
           </div>
         </div>
       </section>
 
       {/* How It Works 3-Step Section */}
-      <section id="how-it-works" className="py-20 bg-slate-950 border-b border-slate-800">
+      <section id="how-it-works" className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-            <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">Simple Process</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">How It Works in 3 Steps</h2>
-            <p className="text-slate-400 text-sm font-semibold">Getting cheap data and paying bills takes less than 2 minutes.</p>
+            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">Simple Process</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">How It Works in 3 Steps</h2>
+            <p className="text-slate-600 text-sm font-semibold">Getting cheap data and paying bills takes less than 2 minutes.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl glass-card-dark text-center space-y-4 border border-slate-800">
-              <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center text-2xl font-black border border-emerald-500/30">
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 text-cyan-600 mx-auto flex items-center justify-center text-2xl font-black">
                 1
               </div>
-              <h3 className="text-xl font-black text-white">Create Free Account</h3>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Create Free Account</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
                 Sign up in 30 seconds with your email and phone number to access reseller rates instantly.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl glass-card-dark text-center space-y-4 border border-slate-800">
-              <div className="w-16 h-16 rounded-2xl bg-teal-500/20 text-teal-300 mx-auto flex items-center justify-center text-2xl font-black border border-teal-500/30">
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-sky-500/10 text-sky-600 mx-auto flex items-center justify-center text-2xl font-black">
                 2
               </div>
-              <h3 className="text-xl font-black text-white">Fund Your Wallet</h3>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Fund Your Wallet</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
                 Add money to your secure wallet using Paystack card payments, bank transfer, or USSD code.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl glass-card-dark text-center space-y-4 border border-slate-800">
-              <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 text-cyan-400 mx-auto flex items-center justify-center text-2xl font-black border border-cyan-500/30">
+            <div className="p-8 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-4">
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 text-blue-600 mx-auto flex items-center justify-center text-2xl font-black">
                 3
               </div>
-              <h3 className="text-xl font-black text-white">Buy Data & Bills</h3>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed">
+              <h3 className="text-xl font-black text-slate-950">Buy Data & Bills</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed">
                 Select your preferred data bundle or utility bill and receive automated delivery in 5 seconds!
               </p>
             </div>
@@ -409,13 +408,58 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
+      {/* Services Grid Section */}
+      <section id="services" className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">All-in-One Services</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">VTU Services & Utility Top-ups</h2>
+            <p className="text-slate-600 text-sm font-semibold">Instant automated fulfillment for all major Nigerian telecommunications.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 mx-auto flex items-center justify-center">
+                <Wifi className="w-7 h-7 stroke-[2.5]" />
+              </div>
+              <h4 className="font-extrabold text-slate-950 text-base">Cheap Data Bundles</h4>
+              <p className="text-xs text-slate-500 font-medium">SME, CG, Gifting & Direct data plans.</p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 mx-auto flex items-center justify-center">
+                <Smartphone className="w-7 h-7 stroke-[2.5]" />
+              </div>
+              <h4 className="font-extrabold text-slate-950 text-base">Airtime Top-Up</h4>
+              <p className="text-xs text-slate-500 font-medium">Instant airtime recharge at 2% discount.</p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 mx-auto flex items-center justify-center">
+                <Tv className="w-7 h-7 stroke-[2.5]" />
+              </div>
+              <h4 className="font-extrabold text-slate-950 text-base">Cable TV Subscriptions</h4>
+              <p className="text-xs text-slate-500 font-medium">DSTV, GOTV & Startimes subscriptions.</p>
+            </div>
+
+            <div className="p-6 rounded-3xl glass-card-light glass-card-light-hover text-center space-y-3">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 mx-auto flex items-center justify-center">
+                <Zap className="w-7 h-7 stroke-[2.5]" />
+              </div>
+              <h4 className="font-extrabold text-slate-950 text-base">Electricity Tokens</h4>
+              <p className="text-xs text-slate-500 font-medium">Prepaid & Postpaid meter token generation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Table Section */}
-      <section id="pricing" className="py-20 bg-slate-900 border-b border-slate-800">
+      <section id="pricing" className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">Reseller Rates</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Data Bundle Pricing</h2>
-            <p className="text-slate-400 text-sm font-semibold">Filter by telecom carrier to view live wholesale data plans.</p>
+            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">Reseller Rates</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">Data Bundle Pricing</h2>
+            <p className="text-slate-600 text-sm font-semibold">Filter by telecom carrier to view live wholesale data plans.</p>
           </div>
 
           {/* Network Filter Tabs */}
@@ -424,8 +468,8 @@ export default function Landing({ user, profile }) {
               onClick={() => setSelectedNetwork('all')}
               className={`px-4 py-1.5 rounded-full text-[11px] font-black transition-all ${
                 selectedNetwork === 'all'
-                  ? 'bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 text-slate-950 shadow-md'
-                  : 'bg-slate-800 text-slate-300 border border-slate-700 hover:border-emerald-500/50'
+                  ? 'bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 shadow-md'
+                  : 'bg-white text-slate-800 border border-slate-200 hover:border-cyan-300'
               }`}
             >
               All Networks
@@ -436,8 +480,8 @@ export default function Landing({ user, profile }) {
                 onClick={() => setSelectedNetwork(net.id)}
                 className={`px-4 py-1.5 rounded-full text-[11px] font-black uppercase transition-all ${
                   selectedNetwork === net.id
-                    ? 'bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 text-slate-950 shadow-md'
-                    : 'bg-slate-800 text-slate-300 border border-slate-700 hover:border-emerald-500/50'
+                    ? 'bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 shadow-md'
+                    : 'bg-white text-slate-800 border border-slate-200 hover:border-cyan-300'
                 }`}
               >
                 {net.id}
@@ -450,22 +494,22 @@ export default function Landing({ user, profile }) {
             {filteredPlans.map((plan) => (
               <div
                 key={plan.id}
-                className="bg-slate-950/90 rounded-3xl p-6 border border-emerald-500/30 shadow-md hover:border-emerald-400 transition-all flex items-center justify-between"
+                className="bg-white/90 rounded-3xl p-6 border border-cyan-200/80 shadow-md hover:shadow-lg transition-all flex items-center justify-between"
               >
                 <div className="space-y-1">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] uppercase font-black bg-slate-900 text-emerald-300 border border-emerald-500/30">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] uppercase font-black bg-slate-100 text-slate-800 border border-slate-200">
                     {plan.network}
                   </span>
-                  <h4 className="font-extrabold text-white text-base">{plan.plan_name}</h4>
-                  <p className="text-xs text-slate-400 font-semibold">Validity: 30 Days</p>
+                  <h4 className="font-extrabold text-slate-950 text-base">{plan.plan_name}</h4>
+                  <p className="text-xs text-slate-500 font-semibold">Validity: 30 Days</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-xl font-black text-emerald-400">
+                  <div className="text-xl font-black text-cyan-700">
                     ₦{parseFloat(plan.selling_price || 0).toLocaleString('en-NG')}
                   </div>
                   <Link
                     to={user ? "/dashboard/buy-data" : "/register"}
-                    className="inline-block mt-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 text-slate-950 text-xs font-black hover:scale-105 transition-transform shadow-sm"
+                    className="inline-block mt-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 text-xs font-black hover:scale-105 transition-transform shadow-sm"
                   >
                     Buy Now
                   </Link>
@@ -477,28 +521,28 @@ export default function Landing({ user, profile }) {
       </section>
 
       {/* Customer Reviews Section */}
-      <section id="reviews" className="py-20 bg-slate-950 border-b border-slate-800">
+      <section id="reviews" className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
-            <span className="text-xs font-black text-emerald-400 uppercase tracking-widest">Testimonials</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Trusted by 50,000+ Users</h2>
-            <p className="text-slate-400 text-sm font-semibold">See what reseller partners and individual users say about us.</p>
+            <span className="text-xs font-black text-cyan-600 uppercase tracking-widest">Testimonials</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">Trusted by 50,000+ Users</h2>
+            <p className="text-slate-600 text-sm font-semibold">See what reseller partners and individual users say about us.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {reviews.map((rev, i) => (
-              <div key={i} className="p-8 rounded-3xl glass-card-dark space-y-4 border border-slate-800">
+              <div key={i} className="p-8 rounded-3xl glass-card-light glass-card-light-hover space-y-4">
                 <div className="flex text-amber-400">
                   {[...Array(rev.rating)].map((_, idx) => (
                     <Star key={idx} className="w-5 h-5 fill-current" />
                   ))}
                 </div>
-                <p className="text-slate-300 text-sm italic font-medium leading-relaxed">
+                <p className="text-slate-700 text-sm italic font-medium leading-relaxed">
                   "{rev.comment}"
                 </p>
-                <div className="pt-2 border-t border-slate-800">
-                  <h4 className="font-extrabold text-white text-sm">{rev.name}</h4>
-                  <p className="text-xs text-emerald-400 font-semibold">{rev.role}</p>
+                <div className="pt-2 border-t border-slate-100">
+                  <h4 className="font-extrabold text-slate-950 text-sm">{rev.name}</h4>
+                  <p className="text-xs text-cyan-600 font-semibold">{rev.role}</p>
                 </div>
               </div>
             ))}
@@ -507,19 +551,19 @@ export default function Landing({ user, profile }) {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 mt-auto">
+      <footer className="bg-slate-950 text-slate-300 py-12 border-t border-slate-800 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-900">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
             <div className="flex items-center space-x-3">
               <img src="/logo.png" alt="GARKO DATA SUB" className="h-10 w-auto object-contain" />
               <span className="text-white font-black text-sm">GARKO DATA SUB</span>
             </div>
-            <div className="text-xs text-slate-500 font-semibold">
+            <div className="text-xs text-slate-400 font-semibold">
               FAST | RELIABLE | AFFORDABLE — Stay Connected, Always.
             </div>
           </div>
 
-          <div className="pt-6 text-center text-xs text-slate-600 font-bold">
+          <div className="pt-6 text-center text-xs text-slate-500 font-bold">
             &copy; {new Date().getFullYear()} GARKO DATA SUB. All rights reserved. Built with React & Supabase.
           </div>
         </div>
@@ -529,7 +573,7 @@ export default function Landing({ user, profile }) {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-xl flex items-center justify-center transition-all hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-600 text-slate-950 shadow-xl flex items-center justify-center transition-all hover:scale-110"
           title="Back to top"
         >
           <ChevronUp className="w-6 h-6 stroke-[3]" />
