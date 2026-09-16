@@ -3,6 +3,11 @@ import TransactionTable from '../../components/TransactionTable';
 import { getUserTransactions } from '../../lib/supabase';
 import { History, RefreshCw } from 'lucide-react';
 
+/**
+ * Customer Transactions Page Component
+ * Renders the full history of data purchases, airtime top-ups, and wallet funding logs
+ * for the currently authenticated reseller account.
+ */
 export default function CustomerTransactions({ user }) {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
