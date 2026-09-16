@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { Search, Filter, CheckCircle2, Clock, XCircle, ArrowUpRight, ArrowDownLeft, Phone } from 'lucide-react';
+import { Search, Filter, ArrowUpDown, CheckCircle, Clock, XCircle, RefreshCw, ArrowUpRight, ArrowDownLeft, Phone } from 'lucide-react';
 
+/**
+ * Transaction Table Component
+ * Renders a glassmorphic data table listing customer or admin transactions
+ * with search filtering, status badges, timestamp formatting, and receipt triggers.
+ */
 export default function TransactionTable({ transactions = [], isAdmin = false }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [networkFilter, setNetworkFilter] = useState('all');
