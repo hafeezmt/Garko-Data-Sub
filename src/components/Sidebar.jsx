@@ -29,6 +29,7 @@ export default function Sidebar({ profile, mobileOpen, setMobileOpen }) {
   const role = profile?.role || 'user';
   const isCustomer = role !== 'admin';
 
+  // Customer navigation menu items
   const customerLinks = [
     { name: 'Home', path: '/dashboard', icon: Home, end: true },
     { name: 'Buy Data', path: '/dashboard/buy-data', icon: Wifi },
