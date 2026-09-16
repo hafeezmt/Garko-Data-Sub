@@ -22,6 +22,11 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
+/**
+ * Customer Dashboard Component
+ * Displays wallet balance widget, promo cashback banner, VTU services grid,
+ * recent transactions table, mobile bottom nav bar, and printable receipt modal.
+ */
 export default function CustomerDashboard({ user, profile, refreshProfile }) {
   const navigate = useNavigate();
   const [transactions, setTransactions] = useState([]);
