@@ -5,6 +5,11 @@ import { executeVtuPurchase, NETWORK_SERVICE_IDS } from '../../lib/vtpass';
 import { Smartphone, Phone, Wallet, Loader2, CheckCircle, Zap } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+/**
+ * Buy Airtime Component
+ * Manages instant airtime recharge across MTN, Airtel, Glo, and 9mobile,
+ * processing wallet balance deduction, automated VTPass VTU API execution, and auto-refunds.
+ */
 export default function BuyAirtime({ user, profile, refreshProfile }) {
   const navigate = useNavigate();
   const [selectedNetwork, setSelectedNetwork] = useState('mtn');
