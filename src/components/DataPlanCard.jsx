@@ -1,6 +1,11 @@
 import React from 'react';
-import { Wifi, CheckCircle, ArrowRight } from 'lucide-react';
+import { Wifi, CheckCircle, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 
+/**
+ * Data Plan Card Component
+ * Renders individual telecom data bundle cards with plan name, validity,
+ * reseller price, network badge, and direct purchase trigger.
+ */
 export default function DataPlanCard({ plan, selected, onSelect, network }) {
   const getNetworkStyle = (net) => {
     switch ((net || '').toLowerCase()) {
