@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Wallet, PlusCircle, Eye, EyeOff, Sparkles, TrendingUp, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Wallet Card Component
+ * Displays the user's available wallet balance with a toggleable eye icon,
+ * quick wallet funding button, and automated cashback rewards ticker.
+ */
 export default function WalletCard({ balance = 0, onFundWallet }) {
   const [showBalance, setShowBalance] = useState(true);
 
