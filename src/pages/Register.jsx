@@ -5,6 +5,11 @@ import { signUpUser, getProfile } from '../lib/supabase';
 import toast from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 
+/**
+ * Register Page Component
+ * Renders user registration form with full name, email, phone, and password inputs,
+ * initializing customer profile records upon successful sign up.
+ */
 export default function Register({ setSession, setProfile }) {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
