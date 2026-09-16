@@ -7,6 +7,7 @@ import { Wifi, CheckCircle, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
  * reseller price, network badge, and direct purchase trigger.
  */
 export default function DataPlanCard({ plan, selected, onSelect, network }) {
+  // Returns network-specific badge colors and border highlights
   const getNetworkStyle = (net) => {
     switch ((net || '').toLowerCase()) {
       case 'mtn':
