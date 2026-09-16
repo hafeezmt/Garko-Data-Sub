@@ -55,6 +55,11 @@ const ESTIMATOR_DATA = {
   ]
 };
 
+/**
+ * Landing Page Component
+ * Renders marketing section, instant estimator widget, 4-column metrics bar,
+ * infinite logo marquee ticker, 3-step process cards, and customer reviews.
+ */
 export default function Landing({ user, profile }) {
   const navigate = useNavigate();
   const [dataPlans, setDataPlans] = useState([]);
