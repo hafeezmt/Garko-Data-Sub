@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * GARKO DATA SUB - Glassmorphism & Cyber-Emerald Design Tokens
+ * Defines backdrop filters, translucent glass card utilities, organic glows,
+ * and keyframe animations for floating elements and marquee tickers.
+ */
 @layer base {
   body {
     @apply bg-slate-50 text-slate-900 antialiased font-sans selection:bg-cyan-400 selection:text-slate-950 overflow-x-hidden;
