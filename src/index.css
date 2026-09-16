@@ -5,7 +5,7 @@
 /**
  * GARKO DATA SUB - Glassmorphism & Cyber-Emerald Design Tokens
  * Defines backdrop filters, translucent glass card utilities, organic glows,
- * and keyframe animations for floating elements and marquee tickers.
+ * keyframe animations, and mobile/desktop responsive breakpoint utilities.
  */
 @layer base {
   body {
