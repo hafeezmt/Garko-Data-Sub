@@ -1,19 +1,32 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { 
-  Home, 
+  Home,
+  LayoutDashboard, 
   Wifi, 
   Smartphone, 
   Wallet, 
   History, 
+  PlusCircle, 
   User, 
+  LogOut, 
+  ShieldAlert,
   Users, 
   Tag, 
   Shield,
+  Settings,
   X
 } from 'lucide-react';
+import { signOutUser } from '../lib/supabase';
+import toast from 'react-hot-toast';
 
-export default function Sidebar({ role = 'user', mobileOpen, setMobileOpen }) {
+/**
+ * Sidebar Navigation Component
+ * Renders the portal sidebar navigation menu for customer and admin routes,
+ * highlighting active routes and handling user logout procedures.
+ */
+export default function Sidebar({ profile, mobileOpen, setMobileOpen }) {
+  const role = profile?.role || 'user';
   const isCustomer = role !== 'admin';
 
   const customerLinks = [
