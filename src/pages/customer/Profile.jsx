@@ -3,6 +3,10 @@ import { supabase, updateProfile } from '../../lib/supabase';
 import { User, Phone, Mail, Lock, Save, Loader2, Shield } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+/**
+ * Customer Profile Component
+ * Manages user profile details, phone contact information, and security password updates.
+ */
 export default function CustomerProfile({ user, profile, refreshProfile }) {
   const [fullName, setFullName] = useState(profile?.full_name || '');
   const [phone, setPhone] = useState(profile?.phone || '');
