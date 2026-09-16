@@ -1,5 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
+/**
+ * Paystack Transaction Verification Proxy Endpoint
+ * Verifies Paystack reference payment status server-side and credits user wallet.
+ */
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
