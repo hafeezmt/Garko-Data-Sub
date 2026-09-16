@@ -49,7 +49,7 @@ export default function Navbar({ user, profile }) {
       <nav className="glass-nav-pill rounded-full px-5 sm:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-all duration-300">
         
         {/* Brand Logo - Enlarged & Glowing */}
-        <Link to="/" className="flex items-center space-x-3 group">
+        <Link to="/" aria-label="GARKO DATA SUB Home" className="flex items-center space-x-3 group">
           <img 
             src="/logo.png" 
             alt="GARKO DATA SUB" 
