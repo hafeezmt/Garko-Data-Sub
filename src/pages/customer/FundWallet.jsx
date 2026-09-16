@@ -4,6 +4,11 @@ import { initializePaystackPayment, verifyPaystackPayment } from '../../lib/pays
 import { Wallet, CreditCard, ShieldCheck, Loader2, PlusCircle, CheckCircle2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+/**
+ * Fund Wallet Component
+ * Handles customer wallet top-ups via Paystack payment gateway,
+ * verifying transactions server-side and crediting the user balance.
+ */
 export default function FundWallet({ user, profile, refreshProfile }) {
   const navigate = useNavigate();
   const [amount, setAmount] = useState('');
