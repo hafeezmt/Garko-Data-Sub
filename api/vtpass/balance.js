@@ -1,3 +1,7 @@
+/**
+ * VTPass Balance Query Proxy Endpoint
+ * Queries live VTPass reseller wallet balance for administrator monitoring.
+ */
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
