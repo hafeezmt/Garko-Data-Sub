@@ -21,6 +21,11 @@ import {
 import { signOutUser } from '../lib/supabase';
 import toast from 'react-hot-toast';
 
+/**
+ * Floating Pill Navbar Component
+ * Renders the floating glass navigation header with brand logo,
+ * section links, mobile drawer menu, and user authentication actions.
+ */
 export default function Navbar({ user, profile }) {
   const navigate = useNavigate();
   const location = useLocation();
