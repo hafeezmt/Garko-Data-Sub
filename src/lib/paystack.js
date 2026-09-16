@@ -1,5 +1,7 @@
 /**
- * Paystack Inline Helper Service
+ * Paystack Payment Gateway Integration Helper Module
+ * Dynamically loads Paystack Pop inline script, launches pop-up modal,
+ * and handles server-side payment verification callbacks.
  */
 
 const PAYSTACK_PUBLIC_KEY = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_demo1234567890';
