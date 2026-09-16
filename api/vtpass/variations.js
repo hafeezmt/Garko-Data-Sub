@@ -1,3 +1,8 @@
+/**
+ * VTPass Variations Proxy Endpoint
+ * Fetches network service variation codes (e.g., mtn-data, airtel-data, glo-data)
+ * securely using VTPass API credentials from environment variables.
+ */
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
