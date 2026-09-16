@@ -1,3 +1,8 @@
+/**
+ * VTPass Payment Execution Proxy Endpoint
+ * Processes VTU data and airtime top-up orders with VTPass gateway,
+ * verifying request signatures and returning transaction status codes.
+ */
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
