@@ -37,7 +37,7 @@ export default function WalletCard({ balance = 0, onFundWallet }) {
             </button>
           </div>
 
-          {/* Amount Display */}
+          {/* Amount Display with Currency Formatting */}
           <div className="flex items-baseline space-x-2">
             <span className="text-4xl sm:text-5xl font-black tracking-tight drop-shadow-md">
               {showBalance ? `₦${parseFloat(balance).toLocaleString('en-NG', { minimumFractionDigits: 2 })}` : '••••••••'}
