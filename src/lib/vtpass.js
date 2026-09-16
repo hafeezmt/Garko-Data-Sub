@@ -1,5 +1,7 @@
 /**
- * VTPass API Client Service (Proxied via /api/vtpass/*)
+ * VTPass Telecom Gateway Integration Helper Module
+ * Provides helper functions to query network variation codes and execute
+ * automated airtime and data fulfillment orders via serverless proxy API routes.
  */
 
 export const NETWORK_SERVICE_IDS = {
