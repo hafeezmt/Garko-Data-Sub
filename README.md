@@ -6,7 +6,15 @@ GARKO DATA SUB is a production-ready, full-stack Data Reselling and VTU (Virtual
 
 ---
 
-## Features
+## 🏗️ System Architecture
+
+- **Front-End Framework**: React 18 + Vite + Tailwind CSS
+- **Database & Auth**: Supabase PostgreSQL with RLS Policies
+- **Serverless API Proxy Layer**: Vercel Serverless Functions (`/api/vtpass/*`, `/api/paystack/*`)
+- **Payment Gateway**: Paystack Automated Payment Verification
+- **Fulfillment API**: VTPass Automated Telecom Gateway Integration
+
+## ⚡ Features
 
 - **Public Landing Page**: Hero section, network availability, features summary, live reseller data pricing table, and footer.
 - **Supabase Authentication**: User registration with auto-created customer profiles, email/password login, role-based protection (`user` vs `admin`).
