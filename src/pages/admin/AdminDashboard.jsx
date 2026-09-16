@@ -4,6 +4,11 @@ import { fetchVTPassBalance } from '../../lib/vtpass';
 import { Users, DollarSign, TrendingUp, Wallet, ShieldCheck, RefreshCw } from 'lucide-react';
 import TransactionTable from '../../components/TransactionTable';
 
+/**
+ * Admin Dashboard Component
+ * Renders platform management stats, total volume calculations, user management list,
+ * manual wallet credit/debit modal, and comprehensive system transaction logs.
+ */
 export default function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [transactions, setTransactions] = useState([]);
