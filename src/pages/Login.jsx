@@ -5,6 +5,11 @@ import { signInUser, getProfile } from '../lib/supabase';
 import toast from 'react-hot-toast';
 import Navbar from '../components/Navbar';
 
+/**
+ * Login Page Component
+ * Renders the customer authentication form with email/password validation,
+ * error notification toasts, and automated dashboard redirection.
+ */
 export default function Login({ setSession, setProfile }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
