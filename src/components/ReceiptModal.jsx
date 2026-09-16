@@ -1,6 +1,11 @@
 import React from 'react';
 import { CheckCircle2, Printer, RotateCcw, X, Share2, ShieldCheck, Download } from 'lucide-react';
 
+/**
+ * Receipt Modal Component
+ * Renders an official printable digital transaction receipt modal with
+ * animated success checkmark, transaction metadata, print trigger, and repeat action.
+ */
 export default function ReceiptModal({ isOpen, onClose, transaction, onRepeat }) {
   if (!isOpen || !transaction) return null;
 
