@@ -343,7 +343,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Infinite Logo Marquee Ticker Section */}
+      {/* Infinite Logo & Carrier Marquee Ticker Section */}
       <section className="py-12 bg-white overflow-hidden border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
           <p className="text-xs font-black text-cyan-800 uppercase tracking-widest">
