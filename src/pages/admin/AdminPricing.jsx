@@ -3,6 +3,11 @@ import { getDataPrices, updateDataPrice, createDataPrice, deleteDataPrice } from
 import { Tag, Plus, Edit2, Trash2, CheckCircle2, XCircle, Loader2, Save, X, DollarSign } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+/**
+ * Admin Pricing Component
+ * Allows administrators to add, edit, or delete wholesale data bundle plans,
+ * configure VTPass variation codes, and adjust reseller selling prices.
+ */
 export default function AdminPricing() {
   const [prices, setPrices] = useState([]);
   const [loading, setLoading] = useState(true);
