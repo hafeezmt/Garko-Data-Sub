@@ -112,6 +112,7 @@ export default function CustomerDashboard({ user, profile, refreshProfile }) {
             </Link>
           </div>
 
+          {/* Promotional Cashback Banner & Reseller Bonus Alert */}
           <div className="flex-1 p-4 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-sky-500/10 to-cyan-500/5 border border-cyan-300/50 flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-xl bg-cyan-500 text-slate-950 flex items-center justify-center font-black">
