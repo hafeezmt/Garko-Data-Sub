@@ -525,7 +525,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Customer Reviews Section */}
+      {/* Customer Testimonials & Reviews Grid Section */}
       <section id="reviews" className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
