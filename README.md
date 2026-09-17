@@ -42,7 +42,19 @@ GARKO DATA SUB is a production-ready, full-stack Data Reselling and VTU (Virtual
 
 ---
 
-## Installation & Local Development Setup
+## 🚀 Deployment & Environment Setup
+
+1. **Vercel Auto-Deployment**: Push code to `main` branch to trigger instant Vercel production build.
+2. **Environment Variables Configured**:
+   - `VITE_SUPABASE_URL`: Supabase Project URL
+   - `VITE_SUPABASE_ANON_KEY`: Supabase Public Anon Key
+   - `SUPABASE_SERVICE_ROLE_KEY`: Supabase Private Service Role Key
+   - `VITE_PAYSTACK_PUBLIC_KEY`: Paystack Public Key
+   - `PAYSTACK_SECRET_KEY`: Paystack Secret Key
+   - `VTPASS_API_KEY`: VTPass Gateway Public Key
+   - `VTPASS_SECRET_KEY`: VTPass Gateway Secret Key
+
+## 💻 Local Development Setup
 
 ### 1. Clone & Install Dependencies
 ```bash
