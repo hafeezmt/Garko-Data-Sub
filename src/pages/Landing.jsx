@@ -458,7 +458,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Pricing Table Section */}
+      {/* Reseller Data Bundle Pricing Table Section */}
       <section id="pricing" className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
