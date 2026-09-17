@@ -314,7 +314,7 @@ export default function Landing({ user, profile }) {
         </div>
       </section>
 
-      {/* Floating Dark Emerald/Cyan Metrics Card */}
+      {/* Floating Dark Emerald/Cyan 4-Column Performance Metrics Card */}
       <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14">
         <div className="rounded-3xl bg-slate-900 text-white p-6 sm:p-10 border border-cyan-400/30 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
