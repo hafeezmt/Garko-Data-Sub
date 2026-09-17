@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+      // Official Brand Colors derived directly from GARKO DATA SUB logo (/logo.png)
       colors: {
         brand: {
           cyan: '#00D2FF',
