@@ -239,7 +239,7 @@ export default function Landing({ user, profile }) {
 
             </div>
 
-            {/* Right Side Interactive Instant Plan Estimator Widget */}
+            {/* Right Side Interactive Instant Plan Estimator Calculator Widget */}
             <div id="calculator" className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-none">
               <div className="glass-card-light rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden border border-cyan-200/80">
                 
