@@ -3,6 +3,12 @@ import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { supabase, getProfile } from './lib/supabase';
 
+/**
+ * Main Application Component & Router Configuration
+ * Manages Supabase session state, user role authorization, toast notification providers,
+ * and nested route layouts for public landing, customer portal, and admin portal.
+ */
+
 // Layout Components
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
