@@ -3,6 +3,11 @@ import { getAllUsers, adminFundUserWallet, recordTransaction } from '../../lib/s
 import { Users, Search, PlusCircle, Wallet, ShieldCheck, Loader2, X } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+/**
+ * Admin Users Component
+ * Manages all registered platform users, displaying user roles, contact emails,
+ * current wallet balances, and providing manual credit/debit funding controls.
+ */
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
