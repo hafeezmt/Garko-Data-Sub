@@ -3,6 +3,11 @@ import TransactionTable from '../../components/TransactionTable';
 import { getAllTransactions } from '../../lib/supabase';
 import { History, RefreshCw } from 'lucide-react';
 
+/**
+ * Admin Transactions Component
+ * Displays system-wide audit logs for all user data purchases, airtime recharges,
+ * wallet funding transactions, and manual administrator balance adjustments.
+ */
 export default function AdminTransactions() {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
