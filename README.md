@@ -140,5 +140,6 @@ npm run build
 
 ---
 
-## License & Support
-Created for **GARKO DATA SUB**. For questions or API key setup assistance, contact support@garkodatasub.com.
+## 📜 License & Support
+
+Created & maintained for **GARKO DATA SUB**. Built with React 18, Tailwind CSS, Supabase PostgreSQL, and VTPass Gateway integration.
