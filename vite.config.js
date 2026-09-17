@@ -1,6 +1,11 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
+/**
+ * Vite Configuration & Dev Server Middleware Proxy
+ * Configures React plugin and local development server middleware to emulate
+ * Vercel Serverless API functions for local testing.
+ */
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
