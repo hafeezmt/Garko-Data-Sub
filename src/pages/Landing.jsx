@@ -177,7 +177,7 @@ export default function Landing({ user, profile }) {
       {/* Floating Pill Glass Navbar */}
       <Navbar user={user} profile={profile} />
 
-      {/* Hero Section (Electric Cyan Brand Theme) */}
+      {/* Hero Section (Electric Cyan Brand Theme & Instant Plan Estimator) */}
       <section className="relative overflow-hidden bg-slate-50 pt-10 pb-20 lg:pt-16 lg:pb-32">
         
         {/* Background Glow Orbs */}
